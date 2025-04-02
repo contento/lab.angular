@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule], // Add HttpClientModule here
 })
 export class DataComponent implements OnInit {
   apiData: any;
