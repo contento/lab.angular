@@ -2,7 +2,7 @@
   <h1>My API App</h1>
   <nav>
     <ul>
-      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
       <li><a routerLink="/about" routerLinkActive="active">About</a></li>
       <li><a routerLink="/data" routerLinkActive="active">Data</a></li>
     </ul>
