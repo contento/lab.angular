@@ -7,7 +7,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { DataComponent } from './pages/data/data.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,14 +15,12 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppRoutingModule,
     HomeComponent,
     AppComponent,
     AboutComponent,
     DataComponent,
     HeaderComponent,
     FooterComponent,
-    RouterModule,
   ],
   providers: [],
 })
