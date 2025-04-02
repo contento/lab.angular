@@ -22,10 +22,11 @@ export class DataComponent implements OnInit {
   fetchData() {
     this.loading = true;
     this.error = undefined;
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1') // Example API
+    this.http.get<any[]>('https://jsonplaceholder.typicode.com/todos') // Fetch all records
       .subscribe(
         data => {
-          this.apiData = data;
+          const randomIndex = Math.floor(Math.random() * data.length); // Select a random index
+          this.apiData = data[randomIndex]; // Assign the random record
           this.loading = false;
         },
         error => {
