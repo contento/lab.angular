@@ -13,6 +13,7 @@ export class DataComponent implements OnInit {
   apiData: any;
   loading = false;
   error: string | undefined;
+  apiUrl = 'https://jsonplaceholder.typicode.com/todos'; // Add API URL property
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +23,7 @@ export class DataComponent implements OnInit {
   fetchData() {
     this.loading = true;
     this.error = undefined;
-    this.http.get<any[]>('https://jsonplaceholder.typicode.com/todos') // Fetch all records
+    this.http.get<any[]>(this.apiUrl) // Use the apiUrl property
       .subscribe({
         next: data => {
           const randomIndex = Math.floor(Math.random() * data.length); // Select a random index

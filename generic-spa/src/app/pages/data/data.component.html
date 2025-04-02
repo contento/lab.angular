@@ -1,6 +1,9 @@
 <div class="data-page">
   <h2>Data</h2>
   <p>This page fetches data from an API.</p>
+  <p>
+    API Source: <a [href]="apiUrl" target="_blank">{{ apiUrl }}</a>
+  </p>
   <button (click)="fetchData()" [disabled]="loading">
     {{ loading ? 'Loading...' : 'Fetch Data' }}
   </button>
