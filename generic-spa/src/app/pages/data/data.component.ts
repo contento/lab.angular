@@ -23,16 +23,16 @@ export class DataComponent implements OnInit {
     this.loading = true;
     this.error = undefined;
     this.http.get<any[]>('https://jsonplaceholder.typicode.com/todos') // Fetch all records
-      .subscribe(
-        data => {
+      .subscribe({
+        next: data => {
           const randomIndex = Math.floor(Math.random() * data.length); // Select a random index
           this.apiData = data[randomIndex]; // Assign the random record
           this.loading = false;
         },
-        error => {
-          this.error = error.message;
+        error: err => {
+          this.error = err.message;
           this.loading = false;
         }
-      );
+      });
   }
 }
