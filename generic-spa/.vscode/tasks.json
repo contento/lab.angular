@@ -37,6 +37,29 @@
           }
         }
       }
+    },
+    {
+      "label": "ng serve",
+      "type": "shell",
+      "command": "ng serve",
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": {
+          "regexp": ".*",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Starting Angular development server.*",
+          "endsPattern": ".*Application bundle generation complete.*"
+        }
+      },
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
     }
   ]
 }
